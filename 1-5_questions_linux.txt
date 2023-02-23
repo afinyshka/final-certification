@@ -1,0 +1,460 @@
+1. Используя команду cat в терминале операционной системы Linux, создать два файла Домашние животные
+(заполнив файл собаками, кошками, хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами
+и ослы), а затем объединить их. Просмотреть содержимое созданного файла. Переименовать файл,
+дав ему новое имя (Друзья человека).
+
+touch Domestic_animals
+touch Pack_animals
+echo dogs >> Domestic_animals
+echo cats >> Domestic_animals
+echo humsters >> Domestic_animals
+echo horses >> Pack_animals
+echo camels >> Pack_animals
+echo donkeys >> Pack_animals
+cat Domestic_animals Pack_animals > Animals
+cat Animals
+
+2. Создать директорию, переместить файл туда.
+
+mkdir final_certification
+mv Animals /home/user/final_certification/
+
+3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.
+
+sudo apt update
+sudo apt install gnupg
+cd /tmp
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+ls
+sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+sudo apt update
+sudo dpkg-reconfigure mysql-apt-config
+sudo apt-get update
+
+sudo apt install mysql-server
+sudo systemctl status mysql
+
+4. Установить и удалить deb-пакет с помощью dpkg.
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt -f install
+sudo dpkg -r google-chrome-stable
+
+5. Выложить историю команд в терминале ubuntu
+
+user@Ubuntu:~$ touch Domestic_animals
+user@Ubuntu:~$ touch Pack_animals
+user@Ubuntu:~$ echo dogs >> Domestic_animals
+user@Ubuntu:~$ echo cats >> Domestic_animals
+user@Ubuntu:~$ echo humsters >> Domestic_animals
+user@Ubuntu:~$ echo horses >> Pack_animals
+user@Ubuntu:~$ echo camels >> Pack_animals
+user@Ubuntu:~$ echo donkeys >> Pack_animals
+user@Ubuntu:~$ cat Domestic_animals Pack_animals > Animals
+user@Ubuntu:~$ cat Animals
+dogs
+cats
+humsters
+horses
+camels
+donkeys
+user@Ubuntu:~$ mkdir final_certification
+user@Ubuntu:~$ mv Animals /home/user/final_certification/
+user@Ubuntu:~$ ll
+total 168
+drwxr-x--- 22 user user    4096 фев 20 15:48 ./
+drwxr-xr-x  3 root root    4096 фев  3 13:59 ../
+-rw-------  1 user user   32508 фев 20 15:35 .bash_history
+-rw-r--r--  1 user user     220 фев  3 13:59 .bash_logout
+-rw-r--r--  1 user user    3771 фев  3 13:59 .bashrc
+drwx------ 14 user user    4096 фев  3 16:01 .cache/
+drwx------ 14 user user    4096 фев  3 14:45 .config/
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Desktop/
+drwxrwxr-x  2 user user    4096 фев 12 18:24 docker/
+drwxrwxr-x  2 user user    4096 фев 19 21:28 docker-swarm/
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Documents/
+-rw-rw-r--  1 user user      19 фев 20 15:47 Domestic_animals
+drwxr-xr-x  2 user user    4096 фев  3 14:25 Downloads/
+drwxrwxr-x  2 user user    4096 фев 20 15:48 final_certification/
+drwx------  2 user user    4096 фев  3 14:45 .gnupg/
+drwx------  3 user user    4096 фев  3 14:09 .local/
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Music/
+-rw-rw-r--  1 user user      22 фев 20 15:47 Pack_animals
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Pictures/
+drwx------  3 user user    4096 фев  3 14:45 .pki/
+-rw-r--r--  1 user user     807 фев  3 13:59 .profile
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Public/
+drwxrwx---  1 root vboxsf  1568 фев 20 11:01 Shared/
+drwx------  5 user user    4096 фев  3 14:32 snap/
+drwx------  2 user user    4096 фев  3 14:11 .ssh/
+-rw-r--r--  1 user user       0 фев  3 15:49 .sudo_as_admin_successful
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Templates/
+-rw-r-----  1 user user       5 фев 20 15:33 .vboxclient-clipboard.pid
+-rw-r-----  1 user user       5 фев 20 15:33 .vboxclient-draganddrop.pid
+-rw-r-----  1 user user       5 фев 20 15:33 .vboxclient-seamless.pid
+-rw-r-----  1 user user       5 фев 20 15:33 .vboxclient-vmsvga-session-tty2.pid
+drwxr-xr-x  2 user user    4096 фев  3 14:09 Videos/
+-rw-------  1 user user   11517 фев 19 21:28 .viminfo
+drwxrwxr-x  3 user user    4096 фев  3 14:45 .vscode/
+user@Ubuntu:~$ ll /home/user/final_certification/
+total 12
+drwxrwxr-x  2 user user 4096 фев 20 15:48 ./
+drwxr-x--- 22 user user 4096 фев 20 15:48 ../
+-rw-rw-r--  1 user user   41 фев 20 15:47 Animals
+user@Ubuntu:~$ sudo apt update
+[sudo] password for user: 
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:2 http://packages.microsoft.com/repos/code stable InRelease [10,4 kB]                          
+Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                          
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:5 http://packages.microsoft.com/repos/code stable/main armhf Packages [136 kB]
+Get:6 http://packages.microsoft.com/repos/code stable/main arm64 Packages [136 kB]
+Get:7 http://packages.microsoft.com/repos/code stable/main amd64 Packages [135 kB]   
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB]        
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [41,5 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [15,2 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [898 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [441 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [101 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [586 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [853 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [267 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu jammy-backports/main amd64 DEP-11 Metadata [7 996 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [12,4 kB]
+Fetched 3 977 kB in 4s (901 kB/s)                               
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+54 packages can be upgraded. Run 'apt list --upgradable' to see them.
+user@Ubuntu:~$ sudo apt install gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+gnupg is already the newest version (2.2.27-3ubuntu2.1).
+gnupg set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13 linux-image-5.15.0-43-generic linux-modules-5.15.0-43-generic
+  linux-modules-extra-5.15.0-43-generic
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+user@Ubuntu:~$ cd /tmp
+user@Ubuntu:/tmp$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+--2023-02-20 15:52:53--  https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 23.61.243.80, 2a02:26f0:41:691::2e31, 2a02:26f0:41:694::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|23.61.243.80|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.24-1_all.deb [following]
+--2023-02-20 15:52:53--  https://repo.mysql.com//mysql-apt-config_0.8.24-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 184.50.200.228
+Connecting to repo.mysql.com (repo.mysql.com)|184.50.200.228|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18048 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.24-1_all.deb’
+
+mysql-apt-config_0.8.24- 100%[==================================>]  17,62K  --.-KB/s    in 0s      
+
+2023-02-20 15:52:53 (111 MB/s) - ‘mysql-apt-config_0.8.24-1_all.deb’ saved [18048/18048]
+
+user@Ubuntu:/tmp$ ls
+mysql-apt-config_0.8.24-1_all.deb
+snap-private-tmp
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-colord.service-3aB0CI
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-geoclue.service-7Q6Pea
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-ModemManager.service-41SMBm
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-power-profiles-daemon.service-d9yPor
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-switcheroo-control.service-aXmtrm
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-systemd-logind.service-PzR1CI
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-systemd-oomd.service-2btkT4
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-systemd-resolved.service-yepeTU
+systemd-private-9067af7d1e2849a69d73037b9ba21c98-upower.service-Lt6oNo
+tracker-extract-3-files.1000
+tracker-extract-3-files.127
+VMwareDnD
+user@Ubuntu:/tmp$ sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+Selecting previously unselected package mysql-apt-config.
+(Reading database ... 245394 files and directories currently installed.)
+Preparing to unpack mysql-apt-config_0.8.24-1_all.deb ...
+Unpacking mysql-apt-config (0.8.24-1) ...
+Setting up mysql-apt-config (0.8.24-1) ...
+Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+user@Ubuntu:/tmp$ sudo apt update
+Hit:1 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease                           
+Get:3 http://repo.mysql.com/apt/ubuntu jammy InRelease [15,2 kB]                                   
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease                                   
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease                  
+Hit:6 http://packages.microsoft.com/repos/code stable InRelease
+Get:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 Sources [966 B]
+Get:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [565 B]
+Get:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [565 B]
+Get:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 Packages [8 555 B]
+Get:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [7 905 B]
+Get:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [455 B]
+Fetched 34,2 kB in 1s (31,0 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+54 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: http://repo.mysql.com/apt/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+user@Ubuntu:/tmp$ sudo dpkg-reconfigure mysql-apt-config
+Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+user@Ubuntu:/tmp$ sudo apt-get update
+Hit:1 http://repo.mysql.com/apt/ubuntu jammy InRelease
+Hit:2 http://packages.microsoft.com/repos/code stable InRelease                                   
+Hit:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                                   
+Hit:4 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                          
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:6 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists... Done
+W: http://repo.mysql.com/apt/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+user@Ubuntu:/tmp$ sudo apt install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13 linux-image-5.15.0-43-generic linux-modules-5.15.0-43-generic
+  linux-modules-extra-5.15.0-43-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common
+  mysql-community-client mysql-community-client-core mysql-community-client-plugins
+  mysql-community-server mysql-community-server-core
+The following NEW packages will be installed:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common
+  mysql-community-client mysql-community-client-core mysql-community-client-plugins
+  mysql-community-server mysql-community-server-core mysql-server
+0 upgraded, 13 newly installed, 0 to remove and 54 not upgraded.
+Need to get 38,3 MB of archives.
+After this operation, 273 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-common amd64 8.0.32-1ubuntu22.04 [68,6 kB]
+Get:2 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.32-1ubuntu22.04 [1 437 kB]
+Get:3 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.32-1ubuntu22.04 [2 184 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libaio1 amd64 0.3.112-13build1 [7 176 B]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+Get:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client amd64 8.0.32-1ubuntu22.04 [2 458 kB]
+Get:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-client amd64 8.0.32-1ubuntu22.04 [67,3 kB]
+Get:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.32-1ubuntu22.04 [25,0 MB]
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4 850 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+Get:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server amd64 8.0.32-1ubuntu22.04 [79,1 kB]
+Get:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-server amd64 8.0.32-1ubuntu22.04 [67,3 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]
+Fetched 38,3 MB in 4s (9 741 kB/s)         
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 245399 files and directories currently installed.)
+Preparing to unpack .../00-mysql-common_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-common (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client-plugins.
+Preparing to unpack .../01-mysql-community-client-plugins_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client-plugins (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client-core.
+Preparing to unpack .../02-mysql-community-client-core_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client-core (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-client.
+Preparing to unpack .../03-mysql-community-client_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-client (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../04-mysql-client_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-client (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../05-libaio1_0.3.112-13build1_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.112-13build1) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../06-libmecab2_0.996-14build9_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-14build9) ...
+Selecting previously unselected package mysql-community-server-core.
+Preparing to unpack .../07-mysql-community-server-core_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-server-core (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mysql-community-server.
+Preparing to unpack .../08-mysql-community-server_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-community-server (8.0.32-1ubuntu22.04) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../09-mecab-utils_0.996-14build9_amd64.deb ...
+Unpacking mecab-utils (0.996-14build9) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../10-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../11-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../12-mysql-server_8.0.32-1ubuntu22.04_amd64.deb ...
+Unpacking mysql-server (8.0.32-1ubuntu22.04) ...
+Setting up libmecab2:amd64 (0.996-14build9) ...
+Setting up mysql-common (8.0.32-1ubuntu22.04) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mecab-utils (0.996-14build9) ...
+Setting up mysql-community-client-plugins (8.0.32-1ubuntu22.04) ...
+Setting up libaio1:amd64 (0.3.112-13build1) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-community-client-core (8.0.32-1ubuntu22.04) ...
+Setting up mysql-community-server-core (8.0.32-1ubuntu22.04) ...
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mysql-community-client (8.0.32-1ubuntu22.04) ...
+Setting up mysql-client (8.0.32-1ubuntu22.04) ...
+Setting up mysql-community-server (8.0.32-1ubuntu22.04) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.32-1ubuntu22.04) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+user@Ubuntu:/tmp$ sudo systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-02-20 16:04:35 MSK; 42s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 5540 (mysqld)
+     Status: "Server is operational"
+      Tasks: 39 (limit: 2288)
+     Memory: 360.8M
+        CPU: 27.206s
+     CGroup: /system.slice/mysql.service
+             └─5540 /usr/sbin/mysqld
+
+фев 20 16:04:07 Ubuntu systemd[1]: Starting MySQL Community Server...
+фев 20 16:04:35 Ubuntu systemd[1]: Started MySQL Community Server.
+
+user@Ubuntu:/tmp$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+--2023-02-20 17:16:17--  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+Resolving dl.google.com (dl.google.com)... 64.233.165.190, 64.233.165.136, 64.233.165.91, ...
+Connecting to dl.google.com (dl.google.com)|64.233.165.190|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 93814424 (89M) [application/x-debian-package]
+Saving to: ‘google-chrome-stable_current_amd64.deb’
+
+google-chrome-stable_current 100%[==============================================>]  89,47M  10,9MB/s    in 24s     
+
+2023-02-20 17:16:41 (3,71 MB/s) - ‘google-chrome-stable_current_amd64.deb’ saved [93814424/93814424]
+
+user@Ubuntu:/tmp$ ll
+total 91724
+drwxrwxrwt 21 root root     4096 фев 20 17:16 ./
+drwxr-xr-x 21 root root     4096 фев  4 16:28 ../
+drwxrwxrwt  2 root root     4096 фев 20 15:51 .font-unix/
+-rw-rw-r--  1 user user 93814424 фев 14 04:10 google-chrome-stable_current_amd64.deb
+drwxrwxrwt  2 root root     4096 фев 20 16:42 .ICE-unix/
+srw-rw-rw-  1 root root        0 фев 20 16:41 .iprt-localipc-DRMIpcServer=
+-rw-r--r--  1 root root     3882 ноя 15 08:49 nginx_1.18.0-6ubuntu14.3_amd64.deb
+drwx------  3 root root     4096 фев 20 16:41 snap-private-tmp/
+drwx------  3 root root     4096 фев 20 16:41 systemd-private-c3fab8bc4c954a82b562be32deffc796-colord.service-rsN3et/
+drwx------  3 root root     4096 фев 20 16:41 systemd-private-c3fab8bc4c954a82b562be32deffc796-geoclue.service-YRX71c/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-ModemManager.service-WfU29b/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-power-profiles-daemon.service-N2dnsB/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-switcheroo-control.service-dl71kU/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-systemd-logind.service-AvjsGT/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-systemd-oomd.service-tkliCB/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-systemd-resolved.service-5UYwYD/
+drwx------  3 root root     4096 фев 20 15:51 systemd-private-c3fab8bc4c954a82b562be32deffc796-systemd-timesyncd.service-inlxMv/
+drwx------  3 root root     4096 фев 20 16:41 systemd-private-c3fab8bc4c954a82b562be32deffc796-upower.service-Khpe3k/
+drwxrwxrwt  2 root root     4096 фев 20 15:51 .Test-unix/
+drwx------  2 user user     4096 фев 20 16:42 tracker-extract-3-files.1000/
+drwx------  2 gdm  gdm      4096 фев 20 16:41 tracker-extract-3-files.127/
+drwxrwxrwt  2 root root     4096 фев 20 15:51 VMwareDnD/
+-r--r--r--  1 user user       11 фев 20 16:42 .X0-lock
+-r--r--r--  1 gdm  gdm        11 фев 20 16:41 .X1024-lock
+-r--r--r--  1 gdm  gdm        11 фев 20 16:41 .X1025-lock
+drwxrwxrwt  2 root root     4096 фев 20 16:42 .X11-unix/
+-r--r--r--  1 user user       11 фев 20 16:42 .X1-lock
+drwxrwxrwt  2 root root     4096 фев 20 15:51 .XIM-unix/
+user@Ubuntu:/tmp$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+Selecting previously unselected package google-chrome-stable.
+(Reading database ... 238585 files and directories currently installed.)
+Preparing to unpack google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (110.0.5481.100-1) ...
+Setting up google-chrome-stable (110.0.5481.100-1) ...
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/google-chrome (google-chrome) in auto mode
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+user@Ubuntu:/tmp$ sudo dpkg -r google-chrome-stable
+(Reading database ... 238698 files and directories currently installed.)
+Removing google-chrome-stable (110.0.5481.100-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+
