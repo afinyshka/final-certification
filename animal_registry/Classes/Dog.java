@@ -1,6 +1,6 @@
 package animal_registry.Classes;
 
-public class Dog extends PackAnimal{
+public class Dog extends DomesticAnimal{
 
     boolean trained = false;
     public Dog(String name, String birthday) {
@@ -12,14 +12,10 @@ public class Dog extends PackAnimal{
         System.out.println("vaf-vaf");
     }
 
-    // @Override
-    // public void eat() {
-    //     System.out.println("Dog " + getName() + " eats");
-    // }
 
     @Override
     public void extraDo(){
-        if(trained){
+        if(isTrained()){
             System.out.println(getName() + " can give you a paw");
         }
         else
@@ -28,7 +24,8 @@ public class Dog extends PackAnimal{
 
     @Override
     public void train() {
-        this.trained = true;
+        boolean t = true;
+        setTrained(t);
         System.out.println("Dog " + getName() + " is trained now");
     }
 

@@ -36,56 +36,61 @@ public class UserInterface {
                 12 - train an animal at a specific index;
                 0 - exit.
                 """;
-        Scanner cs = new Scanner(System.in);
+        // Scanner cs = new Scanner(System.in);
         // System.out.print(infoText);
         while (loop) {
-            if (zoo.zooList.size() > 0) {
-                loop = true;
-                System.out.print(infoText);
-                System.out.print("\nEnter the command or enter 0 to exit: ");
-                int myChoice = cs.nextInt();
-                switch (myChoice) {
-                    case 1 -> addCreatedAnimal(zoo);
-                    case 2 -> {
-                        int i = inputNumber(zoo, cs);
-                        System.out.printf("\n--- %s is removed from the zoo! ---\n",
-                                zoo.zooList.get(i).getClass().getSimpleName());
-                        zoo.removeAnimal(i);
+            try {
+                Scanner cs = new Scanner(System.in);
+                if (zoo.zooList.size() > 0) {
+                    loop = true;
+                    System.out.print(infoText);
+                    System.out.print("\nEnter the command or enter 0 to exit: ");
+                    int myChoice = cs.nextInt();
+                    switch (myChoice) {
+                        case 1 -> addCreatedAnimal(zoo);
+                        case 2 -> {
+                            int i = inputNumber(zoo, cs);
+                            System.out.printf("\n--- %s is removed from the zoo! ---\n",
+                                    zoo.zooList.get(i).getClass().getSimpleName());
+                            zoo.removeAnimal(i);
+                        }
+                        case 3 -> {
+                            zoo.getAllAnimalsInfo();
+                            System.out.printf("Number of animals in the Zoo: %d.\n", countt);
+                        }
+                        case 4 -> zoo.getAnimalInfo(inputNumber(zoo, cs));
+                        case 5 -> zoo.makeAllAnimalsSound();
+                        case 6 -> zoo.makeAnimalSound(inputNumber(zoo, cs));
+                        case 7 -> zoo.makeAllAnimalEat();
+                        case 8 -> zoo.makeAnimalEat(inputNumber(zoo, cs));
+                        case 9 -> zoo.makeAllAnimalExtraDo();
+                        case 10 -> zoo.makeAnimalExtraDo(inputNumber(zoo, cs));
+                        case 11 -> zoo.makeAllAnimalTrain();
+                        case 12 -> zoo.makeAnimalTrain(inputNumber(zoo, cs));
+                        case 0 -> {
+                            cs.close();
+                            loop = false;
+                        }
+                        default -> System.out.println("you entered the wrong command. Choose command from the above list.");
                     }
-                    case 3 -> {
-                        zoo.getAllAnimalsInfo();
-                        System.out.printf("Number of animals in the Zoo: %d.\n", countt);
+                } else {
+                    loop = true;
+                    System.out.print(
+                            "\nThe zoo is empty, the only thing you can do is to add an animal or quit:\n1 - create and add an animal;\n0 - exit.");
+                    System.out.print("\nEnter the command or enter 0 to exit: ");
+                    int myChoice = cs.nextInt();
+                    switch (myChoice) {
+                        case 1 -> addCreatedAnimal(zoo);
+                        case 0 -> {
+                            // cs.close();
+                            loop = false;
+                        }
+                        default ->
+                            System.out.println("you entered the wrong command. Choose command from the above list.");
                     }
-                    case 4 -> zoo.getAnimalInfo(inputNumber(zoo, cs));
-                    case 5 -> zoo.makeAllAnimalsSound();
-                    case 6 -> zoo.makeAnimalSound(inputNumber(zoo, cs));
-                    case 7 -> zoo.makeAllAnimalEat();
-                    case 8 -> zoo.makeAnimalEat(inputNumber(zoo, cs));
-                    case 9 -> zoo.makeAllAnimalExtraDo();
-                    case 10 -> zoo.makeAnimalExtraDo(inputNumber(zoo, cs));
-                    case 11 -> zoo.makeAllAnimalTrain();
-                    case 12 -> zoo.makeAnimalTrain(inputNumber(zoo, cs));
-                    case 0 -> {
-                        cs.close();
-                        loop = false;
-                    }
-                    default -> System.out.println("you entered the wrong command. Choose command from the above list.");
                 }
-            } else {
-                loop = true;
-                System.out.print(
-                        "\nThe zoo is empty, the only thing you can do is to add an animal or quit:\n1 - create and add an animal;\n0 - exit.");
-                System.out.print("\nEnter the command or enter 0 to exit: ");
-                int myChoice = cs.nextInt();
-                switch (myChoice) {
-                    case 1 -> addCreatedAnimal(zoo);
-                    case 0 -> {
-                        // cs.close();
-                        loop = false;
-                    }
-                    default ->
-                        System.out.println("you entered the wrong command. Choose command from the above list.");
-                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

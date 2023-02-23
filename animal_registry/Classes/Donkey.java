@@ -12,23 +12,19 @@ public class Donkey extends PackAnimal{
         System.out.println("ia-ia");
     }
 
-    // @Override
-    // public void eat() {
-    //     System.out.println("Donkey " + getName() + " eats");
-    // }
-
     @Override
     public void extraDo(){
-        if(trained){
+        if(isTrained()){
             System.out.println(getName() + " can give you a ride");
         }
         else
-            System.out.println("Donkey " + getName() + " spits on you");
+            System.out.println("Donkey " + getName() + " look at you angry");
     }
 
     @Override
     public void train() {
-        this.trained = true;
+        boolean t = true;
+        setTrained(t);
         System.out.println("Donkey " + getName() + " is trained now");
     }
 

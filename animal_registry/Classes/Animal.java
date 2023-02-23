@@ -1,14 +1,14 @@
 package animal_registry.Classes;
 
 public abstract class Animal {
-    private boolean trained = false;
+    private boolean trained;
     private String name;
     private String birthday; // format(dd.mm.yyyy)
 
     public Animal(String name, String birthday) {
         this.name = name;
         this.birthday = birthday;
-        // this.trained = false;
+        this.trained = false;
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public abstract class Animal {
     }
 
     public boolean isTrained() {
-        return trained;
+        return this.trained;
     }
 
     public void voice(){
@@ -41,7 +41,7 @@ public abstract class Animal {
     }
 
     public void setTrained(boolean trained) {
-        this.trained = trained;
+        this.trained = true;
     }
 
     @Override

@@ -12,14 +12,9 @@ public class Camel extends PackAnimal{
         System.out.println("cha-cha-cha");
     }
 
-    // @Override
-    // public void eat() {
-    //     System.out.println("Camel " + getName() + " eats");
-    // }
-
     @Override
     public void extraDo(){
-        if(trained){
+        if(isTrained()){
             System.out.println(getName() + " can give you a ride");
         }
         else
@@ -28,7 +23,8 @@ public class Camel extends PackAnimal{
 
     @Override
     public void train() {
-        this.trained = true;
+        boolean t = true;
+        setTrained(t);
         System.out.println("Camel " + getName() + " is trained now");
     }
 

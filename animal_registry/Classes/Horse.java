@@ -12,14 +12,10 @@ public class Horse extends PackAnimal{
         System.out.println("neigh-neigh");
     }
 
-    // @Override
-    // public void eat() {
-    //     System.out.println("Horse " + getName() + " eats");
-    // }
 
     @Override
     public void extraDo(){
-        if(trained){
+        if(isTrained()){
             System.out.println(getName() + " can give you a ride");
         }
         else
@@ -28,7 +24,8 @@ public class Horse extends PackAnimal{
 
     @Override
     public void train() {
-        this.trained = true;
+        boolean t = true;
+        setTrained(t);
         System.out.println("Horse " + getName() + " is trained now");
     }
 

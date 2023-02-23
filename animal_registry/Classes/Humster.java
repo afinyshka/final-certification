@@ -1,6 +1,6 @@
 package animal_registry.Classes;
 
-public class Humster extends PackAnimal{
+public class Humster extends DomesticAnimal{
 
     boolean trained = false;
     public Humster(String name, String birthday) {
@@ -12,23 +12,19 @@ public class Humster extends PackAnimal{
         System.out.println("pi-pi");
     }
 
-    // @Override
-    // public void eat() {
-    //     System.out.println("Humster " + getName() + " eats");
-    // }
-
     @Override
     public void extraDo(){
-        if(trained){
-            System.out.println(getName() + " can spit a wheel");
+        if(isTrained()){
+            System.out.println(getName() + " can spin a wheel");
         }
         else
-            System.out.println("Humster " + getName() + " bites youu");
+            System.out.println("Humster " + getName() + " bites you");
     }
 
     @Override
     public void train() {
-        this.trained = true;
+        boolean t = true;
+        setTrained(t);
         System.out.println("Humster " + getName() + " is trained now");
     }
 
